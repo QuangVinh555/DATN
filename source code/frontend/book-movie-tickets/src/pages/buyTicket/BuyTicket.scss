@@ -1,0 +1,588 @@
+.buyticket{
+    margin-top: 70px;
+    .buyticket-movie{
+       position: relative;
+       .buyticket-movie-2{
+            background-image: url(https://static.mservice.io/img/momo-upload-api-210701105436-637607336767432408.jpg);
+            background-size: contain;
+            padding: 20px 0;
+            .buyticket-movie-title{
+                h1{
+                    text-align: center;
+                    font-size: 3.5rem;
+                    color: var(--bs-white-color);
+                }
+            }
+            .buyticket-movie-lists{
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow-x: hidden;
+                transition: transform 0.3s ease;
+                transform: translateX(0);
+
+                .buyticket-movie-item{
+                    max-width: 250px;
+                    max-height: 510px;
+                    margin: 0 10px;
+                    border-radius: 10px;
+                    cursor: pointer;                
+                    flex: 0 0 auto;
+                    transition: transform 0.3s ease;
+                    // transform: translateX(0);
+
+                    &.active{
+                        transform: translateX(-100%);
+                    }
+                    
+                    .buyticket-movie-img{
+                        position: relative;
+                        overflow: hidden; /* Ẩn phần dư của hình ảnh khi nó phóng to */
+                        border-radius: 10px;
+                        &:hover img{
+                            transform: scale(1.2);
+                        }
+                        img{
+                            transition: transform linear 0.3s; /* Thêm hiệu ứng chuyển đổi 0.3 giây */
+                            border-radius: 10px;
+                            width: 250px;
+                            object-fit: cover;
+                            overflow: hidden; /* Ẩn phần dư của hình ảnh khi nó phóng to */
+                            min-height: 400px;
+                        }
+                        p{
+                            position: absolute;
+                            bottom: 0;
+                            background-color: var(--bs-red-color);
+                            width: 100%;
+                            /* height: 19px; */
+                            padding: 5px 0;
+                            color: white;
+                            text-align: center;
+                            border-bottom-right-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                            font-size: 1.6rem;
+
+                            &:hover{
+                                opacity: 0.9;
+                            }
+                        }
+                    }
+                    .buyticket-movie-name{
+                        color: var(--bs-white-color);
+                        padding-bottom: 30px;
+                        margin: 2px 6px;
+                        h2{
+                            text-align: left;
+                            font-size: 1.8rem;
+                            word-wrap: break-word;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                        h3{
+                            max-width: 90%;
+                            font-size: 1.5rem;
+                            font-weight: 400;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                        
+                        .buyticket-movie-star{
+                            svg{
+                                font-size: 2rem;
+                                color: aqua;
+                            }
+                            font-size: 1.6rem;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+                .buyticket-movie-left{
+                    font-size: 5rem;
+                    background-color: wheat;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 210px;
+                    top: 167px;
+                    cursor: pointer;
+                    z-index: 2;
+
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                .buyticket-movie-right{
+                    font-size: 5rem;
+                    background-color: wheat;
+                    border-radius: 50%;
+                    position: absolute;
+                    right: 210px;
+                    top: 167px;
+                    cursor: pointer;
+
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+       }
+    }
+
+    .buyticket-cinematype{
+        margin-left: 210px;
+        margin-right: 210px;
+        margin-top: 50px;
+        .buyticket-cinematype-title{
+            text-align: center;
+            h1{
+                font-size: 3.5rem;
+            }
+        }
+
+        .cinemaroom-header{
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            margin-top: 30px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            
+            .cinemaroom-location{
+                margin-bottom: 15px;
+    
+                span{
+                    font-size: 1.8rem;
+                }
+    
+                select{
+                    margin-left: 15px;
+                    height: 34px;
+                    // border: navajowhite;
+                    outline: none;
+                    border-radius: 10px;
+                    width: 160px;
+                    border: 1px solid #d82d8b;
+                    color: #d82d8b;
+
+                    option{
+                        color: var(--bs-black-color);
+                    }
+                }
+            }
+    
+            .cinemaroom-types{
+                display: flex;
+                align-items: center;
+                position: relative;
+                .cinemaroom-type{
+                    text-align: center;
+                    margin: 0 10px;
+                    cursor: pointer;
+    
+                    &:hover{
+                        opacity: 0.8;
+                    }              
+    
+                    img{
+                        width: 50px;
+                        object-fit: cover;
+                        border-radius: 10px;
+                        background-color:  var(--bs-white-color);
+                        border: 1px solid #ccc;
+
+                        &.active{
+                            border: 1px solid #d82d8b;
+                        }
+                    }
+    
+                    p{
+                        width: 50px;
+                        overflow: hidden;
+                        font-size: 1.3rem;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+    
+                .cinemaroom-header-add{
+                    position: absolute;
+                    right: 56px;
+                    top: 12px;
+                    margin-left: 10px;
+                    button{
+                        width: 130px;
+                        border: none;
+                        outline: none;
+                        height: 34px;
+                        border-radius: 10px;
+                        background-color: var(--bs-blue-color);
+                        color: var(--bs-white-color);
+                        cursor: pointer;
+        
+                        &:hover{
+                            opacity: 0.6;
+                        }
+    
+                        svg{
+                            font-size: 2rem;
+                            margin: 0 4px -5px -6px;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .cinemaroom-content{
+            display: flex;
+            border: 1px solid #ccc;
+            // padding: 10px 15px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+    
+            .cinemaroom-content-left{
+                flex: 1;
+                border-right: 1px solid #ccc;
+                .cinemaroom-left-header {
+                    display: flex;
+                    align-items: center;
+                    margin: 8px 10px;
+                    justify-content: space-between;
+        
+                    .cinemaroom-left-search{
+                        position: relative;
+                        width: 100%;
+                        input{
+                            width: 100%;
+                            padding: 4px 10px;
+                            font-size: 1.4rem;
+                            height: 34px;
+                            border-radius: 10px;
+                            border: 1px solid #ccc;
+                            outline: none;
+                            font-weight: 300;
+                        }
+                        svg{
+                            position: absolute;
+                            top: 50%;
+                            right: 4px;
+                            transform: translateY(-50%);
+                            font-size: 2rem;
+                            color: #837e7e;
+                        }
+                    }
+        
+                    .cinemaroom-left-add{
+                        button{
+                            width: 120px;
+                            border: none;
+                            outline: none;
+                            height: 34px;
+                            border-radius: 10px;
+                            background-color: var(--bs-blue-color);
+                            color: var(--bs-white-color);
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+        
+                            &:hover{
+                                opacity: 0.6;
+                            }
+        
+                            svg{
+                                font-size: 2rem;
+                                margin: 0 4px 2px -6px;
+                            }
+                        }
+                    }
+                }
+        
+                .cinemaroom-left-infos{
+                    overflow-y: auto;
+                    height: 425px;
+        
+                    .cinemaroom-left-info{
+                        padding: 12px 0;
+                        cursor: pointer;
+                        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                        display: flex;
+                        align-items: center;
+        
+                        &.active{
+                            background-color: rgba(0,0,0,0.2);
+                        }
+        
+                        &:hover{
+                            background-color: rgba(103, 101, 101, 0.2);
+                        }
+                        img{
+                            width: 40px;
+                            object-fit: cover;
+                            border-radius: 10px;
+                            margin: 0 10px;
+                            border: 1px solid #ccc;
+                        }
+                        p{
+                            font-size: 1.6rem;
+                            margin-left: 6px;
+                        }
+                    }
+                }
+            }
+            .cinemaroom-content-right{
+                flex: 2;
+
+                .buticket-cinemaname-header{
+
+                    .buyticket-cinemaname-location{
+                        display: flex;
+                        align-items: center;
+                        margin-left: 12px;
+                        margin-top: 10px;
+                        img{
+                            width:50px;
+                            object-fit: cover;
+                            border: 1px solid #ccc;
+                            cursor: pointer;
+                        }
+                        .buyticket-cinemaname-name{
+                            margin-left: 8px;
+                            h2{
+                                font-size: 1.8rem;
+                                cursor: pointer;
+
+                                &:hover{
+                                    color: #d82d8b;
+                                }
+                            }
+                            h3{
+                                font-weight: 400;
+                                font-size: 1.4rem;
+                                max-width: 630px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+
+                    .showTime-calendar{
+                        display: flex;
+                        align-items: center;
+                        margin-top: 15px;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        padding-bottom: 10px;
+                        padding-left: 8px;
+                        .showTime-border{
+                            text-align: center;
+                            width: 70px;
+                            height: 60px;
+                            border: 1px solid #d82d8b ;
+                            background-color: var(--bs-white-color);
+                            margin: 0 5px;
+                            cursor: pointer;
+                            border-radius: 5px;
+            
+                            &.active{
+                                border: 1px solid blue ;
+            
+                                h1{
+                                    background-color: blue ;
+                                    color: var(--bs-white-color);
+                                    font-weight: 800;
+                                    padding-bottom: 5px;
+                                }
+                            }
+                            h1{
+                                background-color: #d82d8b ;
+                                color: var(--bs-white-color);
+                                font-weight: 800;
+                                padding-bottom: 5px;
+                            }
+                            h3{
+                                color: var(--bs-black-color);
+                                font-weight: 600;
+                                margin-top: 4px;
+                            }
+                        }
+            
+                        .showTime-save{
+                           margin-left: 15px;
+            
+                            button{
+                                border: none;
+                                outline: none;
+                                width: 110px;
+                                height: 40px;
+                                border-radius: 10px;
+                                background-color: var(--bs-blue-color);
+                                color: var(--bs-white-color);
+                                cursor: pointer;
+                                font-size: 1.4rem;
+            
+                                &:hover{
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .buyticket-showtime{
+                    margin-top: 15px;
+                    margin-left: 15px;
+                    overflow: auto;
+                    height: 335px;
+                    .buyticket-showtime-list{
+                        .buyticket-showtime-item{
+                            margin-top: 10px;
+                            display: flex;
+                            padding-bottom: 25px;
+                            border-bottom: 1px solid #ccc;
+                            border-radius: 10px;
+                            overflow: hidden;
+
+                            img{
+                                min-width: 150px;
+                                max-width: 160px;
+                                object-fit: cover;
+                                border-radius: 10px;
+                                max-height: 250px;
+                                overflow: hidden;
+
+                                &:hover{
+                                   opacity: 0.8;
+                                   cursor: pointer;
+                                }
+                            }
+                            .buyticket-showtime-info{
+                                margin-left: 10px;
+                                .buyticket-showtime-info-stamp{
+                                    background-color: aquamarine;
+                                    font-size: 1.5rem;
+                                    width: fit-content;
+                                    border-radius: 5px;
+                                    padding: 1px 5px;
+                                    // color: var(--bs-white-color);
+                                    
+                                    &.green{
+                                        background-color: green;
+                                        color: white
+                                    }
+                                    &.yellow{
+                                        background-color: yellow;
+                                        color: black
+                                    }
+                                    &.orange{
+                                        background-color: orange;
+                                        color: white
+                                    }
+                                    &.red{
+                                        background-color: red;
+                                        color: white
+                                    }
+                                }
+                                .buyticket-showtime-info-name{
+                                    font-size: 1.8rem;
+                                    margin-top: 4px;
+                                    cursor: pointer;
+
+                                    &:hover{
+                                        color:#d82d8b
+                                    }
+                                }
+                                .buyticket-showtime-info-category{
+                                    font-size: 1.5rem;
+                                    font-weight: 400;
+                                }
+                                p{
+                                    font-size: 1.6rem;
+                                    font-weight: 600;
+                                    margin-top: 6px;
+                                }
+                                .buyticket-showtime-hourtime-list{
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    margin-top: 6px;
+                                    button{
+                                        border: 1px solid var(--bs-blue-color);
+                                        color: var(--bs-blue-color);
+                                        font-size: 1.5rem;
+                                        padding: 4px 8px;
+                                        margin: 4px 6px;
+                                        border-radius: 5px;
+                                        cursor: pointer;
+
+                                        &:hover{
+                                            opacity: 0.8;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // loading css
+    .userinfo-loading{
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.3);
+      z-index: 1000;
+
+      .lds-dual-ring {
+          position: absolute;
+          top: 50%;
+          bottom: 0;
+          right: 0;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          z-index: 2;
+        }
+        .lds-dual-ring:after {
+          content: " ";
+          display: block;
+          width: 64px;
+          height: 64px;
+          margin: 8px;
+          border-radius: 50%;
+          border: 6px solid #fff;
+          border-color: #fff transparent #fff transparent;
+          animation: lds-dual-ring 1.2s linear infinite;
+        }
+        @keyframes lds-dual-ring {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+    }
+
+
+
+
+     // toast message
+     .Toastify{
+        font-size: 1.5rem;
+        
+        .Toastify__toast-container{
+            
+            margin-top: 50px;
+        }
+    }
+}

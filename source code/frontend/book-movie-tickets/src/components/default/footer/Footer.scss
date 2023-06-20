@@ -1,0 +1,99 @@
+.footer{
+    margin-top: 60px;
+    background-color: #262626;
+    .footer-list{
+        display: flex;
+        margin: 0 210px;
+        justify-content: space-between;
+        .footer-item{
+            color: var(--bs-white-color);
+            margin-top: 50px;
+
+            &.footer-item-take{
+                width: 350px;
+            }
+            h1{
+                font-size: 1.6rem;
+            }
+            .footer-content{
+                p{
+                    font-size: 1.4rem;
+                    margin: 6px 0;
+                    font-weight: 400;
+                    color:  hsla(0,0%,100%,.8);
+                    cursor: pointer;
+
+                    &:hover{
+                        --tw-text-opacity: 1;
+                        color: rgb(255 255 255/var(--tw-text-opacity));
+                    }
+                }
+                .footer-content-app{
+                    display: flex;
+                    align-items: center;
+                    justify-content: left;
+
+                    img{
+                        width: 150px;
+                        margin: 10px 10px 0 10px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom{
+        margin: 40px 210px 0 210px;
+        display: flex;
+        align-items: center;
+        padding-bottom: 50px;
+        .footer-bottom-logo{
+            color: var(--bs-white-color);
+            display: flex;
+            align-items: center;
+            flex: 2;
+            
+            img{
+                width: 80px;
+            }
+            .footer-bottom-info{
+                margin-left: 8px;
+                h1{
+                    font-size: 1.6rem;
+                }
+                p{
+                    font-size: 1.2rem;
+                }
+            }
+        } 
+        .footer-bottom-media{
+            flex: 1;
+            margin-left: 10px;
+            .footer-bottom-img{
+                img{
+                    width: 30px;
+                    margin: 0 8px;
+                    object-fit: cover;
+                    cursor: pointer;
+                }
+            }
+            .footer-bottom-coppy{
+                p{
+                    color: var(--bs-white-color);
+
+                }
+            }
+            .footer-bottom-signature{                    
+                    
+                p{
+                    color: var(--bs-white-color);
+
+                }
+                img{
+
+                }
+            }
+        }
+    }
+}

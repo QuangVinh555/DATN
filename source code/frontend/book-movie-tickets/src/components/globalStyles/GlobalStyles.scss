@@ -1,0 +1,52 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+
+}
+
+:root {
+    --bs-admin-left: #304343;
+    --bs-admin-right: #9fa79d;
+    --bs-admin-button: #355257;
+    --bs-white-color: #fff; 
+    --bs-black-color: #000; 
+    --bs-red-color: #ff0000;
+    --bs-green-color: #008000;
+    --bs-blue-color: #0000ff;
+    --bs-table-thead: #c4fad5; 
+    --bs-table-tbody: #d2ded6; 
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

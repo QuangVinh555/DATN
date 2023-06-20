@@ -1,0 +1,162 @@
+.login{
+    // position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    // background-color: rgba(255,255,255,0.2);
+    position: fixed;
+
+    .login-2{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);;
+        background-color: cadetblue;
+        width: 30%;
+        height: 80%;
+        border-radius: 10px;
+        .login-logo{
+            margin-top: 30px;
+            text-align: center;
+            img{
+                width: 200px;
+                object-fit: cover;
+            }
+        }
+        h1{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 3rem;
+        }
+        .login-form{
+            text-align: center;
+            margin-top: 20px;
+            form{
+                .login-item{
+                    margin: 10px 40px;
+                    display: flex;
+                    label{
+                        color: var(--bs-white-color);
+                        text-align: left;
+                        font-size: 1.6rem;
+                        display: block;
+                        width: 100px;
+                        max-width: 100px;
+                    }
+                    input{
+                        font-size: 1.4rem;
+                        outline: none;
+                        border: none;
+                        height: 30px;
+                        margin-left: 4px;
+                        border-radius: 5px;
+                        padding: 5px 10px;
+                        width: 100%;
+                    }
+                }
+                .login-button{
+                    margin: 40px 40px 0 40px;
+
+                    .login-success{
+                        width: 100%;
+                        padding: 10px 0;
+                        outline: none;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        background-color: var(--bs-blue-color);
+                        color: var(--bs-white-color);
+
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                    }
+                    p{
+                        margin-top: 10px;
+                        color: var(--bs-white-color);
+                        font-size: 1.4rem;
+                    }
+                    .login-google{
+                        margin-top: 10px;
+                        width: 100%;
+                        padding: 10px 0;
+                        outline: none;
+                        border: none;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        // background-color: var(--bs-blue-color);
+                        // color: var(--bs-white-color);
+
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                    }
+                    p{
+                        b{
+                            color: var(--bs-blue-color);
+                            cursor: pointer;
+                            &:hover{
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    // toast message
+    .Toastify{
+        font-size: 1.5rem;
+        
+        .Toastify__toast-container{
+            
+            margin-top: 50px;
+        }
+    }
+
+    // loading css
+    .userinfo-loading{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 1;
+
+        .lds-dual-ring {
+            position: absolute;
+            top: 50%;
+            bottom: 0;
+            right: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+          }
+          .lds-dual-ring:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid #fff;
+            border-color: #fff transparent #fff transparent;
+            animation: lds-dual-ring 1.2s linear infinite;
+          }
+          @keyframes lds-dual-ring {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+    }
+}

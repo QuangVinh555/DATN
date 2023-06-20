@@ -1,0 +1,156 @@
+.admin{
+    display: flex;
+    height: 100vh;
+    .admin-left{
+        flex: 3;
+        background-color: var(--bs-admin-left);
+        // overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        .admin-left-header{
+            display: block;
+            // text-align: center;
+            margin-left: 40px;
+            .admin-left-img{
+                width: 200px;
+                height: 100px;
+                object-fit: contain;
+            }
+        }
+        .admin-left-title{
+            .admin-left-lists{
+                .admin-left-listItem{
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: var(--bs-white-color);
+                    cursor: pointer;
+                    padding: 16px 0;
+
+                    svg{
+                        margin-left: 40px;
+                        margin-right: 20px;
+                        color: var(--bs-white-color);
+                        font-size: 2.2rem;
+                    }
+
+                    &.active{
+                        background-color: rgba(255, 255, 255, 0.5);
+                        border-right: 1px solid rgba(255, 255, 255, 0.5);
+                    }
+
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+            }
+        }
+    }
+    .admin-right{
+        flex: 9;
+        background-color: var(--bs-admin-right);
+
+        .admin-right-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 50px;
+            height: 100px;
+
+
+            .admin-right-menu{
+                display: flex;
+                align-items: center;
+
+                svg{
+                    font-size: 3rem;
+                }
+
+                h1{
+                    margin-left: 5px;
+                }
+            }
+
+            .admin-right-profile{
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+
+                .admin-right-logo{
+                    width: 44px;
+                    border-radius: 50%;
+                    margin-right: 5px;
+
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+
+                .admin-right-info{
+                    h3{
+                        font-size: 1.8rem;
+                    }
+                    span{
+                        font-size: 1.4rem;
+                    }
+
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+
+                .admin-right-profile-hover{
+                    position: absolute;
+                    width: 130px;
+                    height: 80px;
+                    bottom: -85px;
+                    border-radius: 5px;
+                    background-color: #fff;
+                    display: none;
+                    
+                    ul{
+                        li{
+                            &:hover{
+                                opacity: 0.8;
+                                background-color: var(--bs-admin-left);
+                                border-radius: 5px;
+                                color: var(--bs-white-color);
+                            }
+                            padding: 8px 10px;
+                            list-style: none;
+                            font-size: 1.6rem;
+                        }
+                        li:nth-child(1){
+                            border-bottom: 1px solid #ccc;                     
+                        }
+                    }
+                }
+
+                
+                &:hover .admin-right-profile-hover{
+                    display: block;
+                }
+
+                &::after{
+                    content: "";
+                    position: absolute;
+                    width: 130px;
+                    height: 10px;
+                    bottom: -6px;               
+                }
+            }
+        }
+    }
+
+      // toast message
+      .Toastify{
+        font-size: 1.5rem;
+        
+        .Toastify__toast-container{
+            
+            margin-top: 50px;
+        }
+    }
+}

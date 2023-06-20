@@ -1,0 +1,26 @@
+.movietheater{
+    // text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    &.movietheater-container{
+        margin-top: 70px;
+    }
+    .movietheater-btn{
+        padding: 30px 0;
+        margin: 20px 200px;
+        border: none;
+        border-radius: 20px;
+        font-size: 2rem;
+        cursor: pointer;
+        font-weight: 700;
+        background-color: var(--bs-admin-button);
+        color: var(--bs-white-color);
+
+        &:hover{
+            // background-color: rgba(0, 0, 0, 0.1);
+            opacity: 0.7;
+        }
+    }
+}

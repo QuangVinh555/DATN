@@ -1,0 +1,1022 @@
+.chairstatus{
+    position: fixed;
+    left: 0;
+    top: -20px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 11;
+    .chairstatus-2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 60%;
+        height: 90%;
+        // background-color: aquamarine;
+        border-radius: 10px;
+        .chairstatus-header{
+            display: flex;
+            background-color: #d82d8b;
+            color: var(--bs-white-color);
+            height: 50px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            svg{
+                position: absolute;
+                left: 0;
+                font-size: 3.5rem;
+                cursor: pointer;
+
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+            h1{
+                text-align: center;
+            }
+        }
+        .chairstatus-container{
+            background-color: #262626 ;
+            .chairstatus-screen{
+                padding: 10px 0;
+                position: relative;
+                .chairstatus-line{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 200px;
+                    height:2px;
+                    text-align: center;
+                    background-color: var(--bs-white-color);
+                }
+                p{
+                    margin-top: 6px;
+                    color: var(--bs-white-color);
+                    text-align: center;
+                    font-size: 1.4rem;
+                }
+            }
+            .chairstatus-list{
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 72px;
+
+                .chairstatus-item {
+
+                    button{
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                        max-width: 100px;
+                        min-width: 40px;
+                        height: 35px;
+                        width: 40px;
+                        /* padding: 10px 12px; */
+                        margin: 4px 4px;
+                        border-radius: 5px;
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                    .btnNormal{
+                        background-color: #722ed1;
+                        color: var(--bs-white-color);
+                    }
+                    .btnVIP{
+                        background-color: #f5222d;
+                        color: var(--bs-white-color);
+                    }
+                    .btnCouple{
+                        background-color: #eb2f96;
+                        color: var(--bs-white-color);
+                    }
+                    .btnSelected{
+                        background-color: #d82d8b;
+                        border: 1px solid var(--bs-white-color);
+                    }
+
+                    .btnSelectedBuy{
+                        background-color: #404040;
+                        color: var(--bs-white-color);
+                        border: none;
+
+                        &:hover{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            .chairstatus-state{
+                padding-bottom: 8px;
+                .chairstatus-state-1{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--bs-white-color);
+                    .chairstatus-state-item{
+                        margin: 5px 30px;
+                        display: flex;
+                        align-items: center;
+                        .chairstatus-square{
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 5px;
+                            background-color: #404040;
+
+                            &.btnSelected{
+                                background-color: #d82d8b;
+                                border: 1px solid var(--bs-white-color);
+                            }
+        
+                            &.btnSelectedBuy{
+                                background-color: #404040;
+                            }
+
+                            &.btnSelectedByUser{
+                                background-color: #ebd82c;
+                            }
+                        }
+                        p{
+                            margin-left: 8px;
+                        }
+                    }
+                }
+                .chairstatus-state-2{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--bs-white-color);
+
+                    .chairstatus-state-item{
+                        margin: 2px 30px;
+                        display: flex;
+                        align-items: center;
+                        .chairstatus-square{
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 5px;
+                            background-color: #404040;
+
+                            &.btnNormal{
+                                background-color: #722ed1;
+                                color: var(--bs-white-color);
+                            }
+                            &.btnVIP{
+                                background-color: #f5222d;
+                                color: var(--bs-white-color);
+                            }
+                            &.btnCouple{
+                                background-color: #eb2f96;
+                                color: var(--bs-white-color);
+                            }
+                        }
+                        p{
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+
+            .chairstatus-info{
+                background-color: var(--bs-white-color);
+                padding-top: 10px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                .chairstatus-info-title{
+                    margin: 0 20px;
+                    display: flex;
+                    align-items: center;
+                    p{
+                        font-size: 1.6rem;
+                        // background-color: green;
+                        padding: 2px 8px;
+                        border-radius: 5px;
+
+                        &.green{
+                            background-color: green;
+                            color: white
+                        }
+                        &.yellow{
+                            background-color: yellow;
+                            color: black
+                        }
+                        &.orange{
+                            background-color: orange;
+                            color: white
+                        }
+                        &.red{
+                            background-color: red;
+                            color: white
+                        }
+                    }
+                    h2{
+                        font-size: 1.6rem;
+                        margin-left: 10px;
+                    }
+                }
+                .chairstatus-info-date{
+                    display: flex;
+                    align-items: center;
+                    margin: 0 14px;
+                    margin-top: 5px;
+                    span{
+                        font-size: 1.4rem;
+                        color: #fa842f;
+                        margin: 0 6px;
+                    }
+                }
+                .chairstatus-chairdown{
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 20px;
+                    border-top: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                    justify-content: space-between;
+                    padding: 10px 0;
+                    p{
+                        font-size: 1.6rem;
+                        color: #5b5858;
+
+                    }
+                    .chairstatus-chairname{
+                        display: flex;
+                        button{
+                            width: fit-content;
+                            padding: 4px 8px;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            font-size: 1.5rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+    
+                            svg{
+                                font-size: 2rem;
+                                margin-left: 4px;
+                                color: var(--bs-red-color);
+                                cursor: pointer;
+    
+                                &:hover{
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                    }
+                }
+                .chairstatus-temp{
+                    display: flex;
+                    align-items: center;
+                    margin: 0 20px;
+                    justify-content: space-between;
+                    padding-bottom: 10px;
+                    
+                    .chairstatus-temp-price{
+                        p:nth-child(1){
+                            font-size: 1.6rem;
+                            color: #5b5858;
+                        }
+                        p:nth-child(2){
+                            font-size: 1.8rem;
+                            font-weight: 600;
+                            margin-top: 4px;
+                        }
+                    }
+                    .chairstatus-buy{
+                        button{
+                            height: 45px;
+                            width: 90px;
+                            cursor: pointer;
+                            background-color: #d82d8b;
+                            color: var(--bs-white-color);
+                            outline: none;
+                            border: none;
+                            border-radius: 10px;
+
+                            &:hover{
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+ // form combo
+ .combo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 12;
+    .combo-2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background-color: var(--bs-white-color);
+        border-radius: 10px;
+        width: 35%;
+        height: 92%;
+        .combo-header{
+            background-color: #d82d8b;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            svg{
+                font-size: 3.5rem;
+                color: var(--bs-white-color);
+                cursor: pointer;
+
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+            h1{
+                width: 100%;
+                text-align: center;
+                color: var(--bs-white-color);
+            }
+        }
+        .combo-container{
+            overflow: auto;
+            height: 500px;
+            .combo-list{
+                margin: 10px 15px;
+                .combo-item{
+                    display: flex;
+                    align-items: center;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #ccc;
+                    .combo-item-img{
+                        img{
+                            width: 110px;
+                            object-fit: cover;
+
+                        }
+                    }
+                    .combo-item-info{
+                        margin: 8px 8px;
+                        h1{
+                            font-size: 1.8rem;
+                        }
+                        p{
+                            font-size: 1.6rem;
+                        }
+                        .combo-item-quantity{
+                            display: flex;
+                            align-items: center;
+                            .combo-item-minus{
+                                font-size: 2.8rem;
+                                cursor: pointer;
+
+                                &.disabled{
+                                    opacity: 0.5;
+                                }
+
+                                &.active{
+                                    color: #d82d8b
+                                }
+                            }
+                            p{
+                                font-size: 2.5rem;
+                                margin: 0 8px;
+                            }
+                            .combo-item-add{
+                                font-size: 2.8rem;
+                                color: #d82d8b;
+                                cursor: pointer;
+
+                                &.disabled{
+                                    opacity: 0.5;
+                                }
+
+                                &.active{
+                                    color: #d82d8b
+                                }
+                            }
+                            .combo-item-num{
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .combo-footer{
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            .combo-price{
+                margin: 5px 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .combo-total{
+                    color: #514f4f;
+                    font-weight: 400;
+                }
+                h2{
+                    font-size: 2rem;
+                }
+            }
+            .combo-btn{
+                width: 100%;
+                padding: 0 15px;
+                button{
+                    width: 100%;
+                    height: 50px;
+                    border: none;
+                    color: var(--bs-white-color);
+                    background-color: #d82d8b;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-size: 1.8rem;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// form ticket detail
+.ticketdetail{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 13;
+    .ticketdetail-2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 60%;
+        height: 88%;
+        display: flex;
+        .ticketdetail-left{
+            flex: 1;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: white;
+
+            .ticketdetail-left-namemovie{
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+                margin-left: 25px;
+                margin-right: 25px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+                p{
+                    font-size: 1.6rem;
+                    background-color: green;
+                    color: #fff;
+                    padding: 0 10px;
+                    border-radius: 5px;
+                }h1{
+                    margin-left: 10px;
+                }
+            }
+            .ticketdetail-left-date{
+                display: flex;
+                align-items: center;
+                margin: 10px 20px 0 20px;
+                
+                .ticketdetail-left-hourtime{
+                    min-width: 150px;
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+                .ticketdetail-left-datetime{
+                    margin-left: 100px;
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .ticketdetail-left-cinema{
+                margin: 10px 20px 0 20px;
+                p:nth-child(1){
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+                p:nth-child(2){
+                    font-size: 1.9rem;
+                    font-weight: 700;
+                }
+                p:nth-child(3){
+                    font-size: 1.6rem;
+                }
+            }
+            .ticketdetail-left-cinemaroom{
+                margin: 10px 20px 0 20px;
+                display: flex;
+                align-items: center;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+                .ticketdetail-left-room{
+                    min-width: 150px;
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+
+                .ticketdetail-left-format{
+                    margin-left: 100px;
+
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .ticketdetail-left-chairinfo{
+                margin: 10px 20px 0 20px;
+
+                p{
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+                .ticketdetail-left-chair{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    p{
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                    h2{
+                        font-size: 1.8rem;
+                    }
+                }
+               
+            }
+            .ticketdetail-left-comboinfo{
+                margin: 15px 20px 0 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+
+                p{
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+
+                .ticketdetail-left-combo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    p{
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                    h2{
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+            .ticketdetail-left-totaltemp{
+                display: flex;
+                align-items: center;
+                margin: 15px 20px 0 20px;
+                justify-content: space-between;
+
+                p{
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
+                h2{
+                    font-size: 1.8rem;
+                }
+            }
+            .ticketdetail-left-pointinfo{
+                margin: 15px 20px 0 20px;
+                p{
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+                input{
+                    width: 100%;
+                    margin-top: 5px;
+                    height:34px;
+                    border: 1px solid #ccc;
+                    outline: none;
+                    border-radius: 10px;
+                    padding: 0 10px;
+                    font-size: 1.6rem;
+                    color: var(--bs-red-color);
+                }
+            }
+        }
+        .ticketdetail-right{
+            flex: 1;
+            background-color: #d82d8b;
+            
+            .ticketdetail-right-exit{
+                margin: 15px 20px 0 20px;
+                text-align: right;
+                svg{
+                    font-size: 3rem;
+                    color: #fff;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    color: #dccdcd;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+            .ticketdetail-right-payment{
+                margin: 20px 20px 0 20px;
+                .ticketdetail-right-momo{
+                    display: flex;
+                    align-items: center;
+
+                    img{
+                        width: 200px;
+                        object-fit: cover;
+                        border-radius: 10px;
+                    }
+                    button{
+                        margin-left: 20px;
+                        height: 50px;
+                        width: 200px;
+                        border: 1px solid #fff;
+                        border-radius: 10px;
+                        color: #d82d8b;
+                        font-weight: 700;
+                        cursor: pointer;
+
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                    }
+                }
+                .ticketdetail-right-vnpay{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 40px;
+    
+                    img{
+                        width: 200px;
+                        object-fit: cover;
+                        border-radius: 10px;
+                        border: 1px solid #ccc;
+                    }
+                    button{
+                        margin-left: 20px;
+                        height: 50px;
+                        width: 200px;
+                        border: 1px solid #fff;
+                        border-radius: 10px;
+                        color: red;
+                        font-weight: 700;
+                        cursor: pointer;
+    
+                        &:hover{
+                            opacity: 0.8;
+                        }
+                    }
+                }
+
+                .ticketdetail-right-local{
+                    margin-top: 80px;
+                    button{
+                       width: 100%;
+                       height: 40px;
+                       border-radius: 10px;
+                       border: none;
+                       cursor: pointer;
+                       background-color: blue;
+                       color: white;
+
+                       &:hover {
+                        opacity: 0.8;
+                       }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// form book ticket success
+.bookticket{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 13;
+    .bookticket-2{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 40%;
+        height: 95%;
+        display: flex;
+        .bookticket-left{
+            flex: 1;
+            border-radius: 10px;
+            background-color: white;
+
+            .bookticket-left-header{
+                background-color: green;
+                color: white;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                font-size: 1.8rem;
+
+                p:nth-child(1){
+                    text-transform: uppercase;
+                }
+            }
+
+            .bookticket-left-namemovie{
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+                margin-left: 25px;
+                margin-right: 25px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+                p{
+                    font-size: 1.6rem;
+                    background-color: green;
+                    color: #fff;
+                    padding: 0 10px;
+                    border-radius: 5px;
+                }h1{
+                    margin-left: 10px;
+                }
+            }
+            .bookticket-left-code{
+                margin: 10px 20px;
+            }
+            .bookticket-left-date{
+                display: flex;
+                align-items: center;
+                margin: 10px 20px 0 20px;
+                
+                .bookticket-left-hourtime{
+                    min-width: 150px;
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+                .bookticket-left-datetime{
+                    margin-left: 100px;
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .bookticket-left-cinema{
+                margin: 10px 20px 0 20px;
+                p:nth-child(1){
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+                p:nth-child(2){
+                    font-size: 1.9rem;
+                    font-weight: 700;
+                }
+                p:nth-child(3){
+                    font-size: 1.6rem;
+                }
+            }
+            .bookticket-left-cinemaroom{
+                margin: 10px 20px 0 20px;
+                display: flex;
+                align-items: center;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+                .bookticket-left-room{
+                    min-width: 150px;
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+
+                .bookticket-left-format{
+                    margin-left: 100px;
+
+                    p:nth-child(1){
+                        font-size: 1.3rem;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                    }
+                    p:nth-child(2){
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .bookticket-left-chairinfo{
+                margin: 10px 20px 0 20px;
+
+                p{
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+                .bookticket-left-chair{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    p{
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                    h2{
+                        font-size: 1.8rem;
+                        font-weight: 200;
+                    }
+                }
+               
+            }
+            .bookticket-left-comboinfo{
+                margin: 10px 20px 0 20px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #ccc;
+
+                p{
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+
+                .bookticket-left-combo{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    p{
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                    }
+                    h2{
+                        font-size: 1.8rem;
+                        font-weight: 200;
+                    }
+                }
+            }
+
+            .bookticket-left-point{
+                display: flex;
+                margin: 10px 20px 0 20px;
+                justify-content: space-between;
+                align-items: center;
+
+                h2:nth-child(2){
+                    font-size: 1.8rem;
+                }
+            }
+            .bookticket-left-totaltemp{
+                display: flex;
+                align-items: center;
+                margin: 15px 20px 0 20px;
+                justify-content: space-between;
+
+                p{
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
+                h2{
+                    font-size: 1.8rem;
+                }
+            }
+           
+        }
+    }
+
+}
+
+// loading css
+.userinfo-loading{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0.3);
+
+// position: fixed;
+z-index: 2000;
+
+.lds-dual-ring {
+   position: absolute;
+   top: 50%;
+   bottom: 0;
+   right: 0;
+   left: 50%;
+   transform: translateX(-50%) translateY(-50%);
+   display: inline-block;
+   width: 80px;
+   height: 80px;
+   z-index: 2;
+ }
+ .lds-dual-ring:after {
+   content: " ";
+   display: block;
+   width: 64px;
+   height: 64px;
+   margin: 8px;
+   border-radius: 50%;
+   border: 6px solid #fff;
+   border-color: #fff transparent #fff transparent;
+   animation: lds-dual-ring 1.2s linear infinite;
+ }
+ @keyframes lds-dual-ring {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+ }
+}
+
+// toast message
+.Toastify{
+    font-size: 1.5rem;
+    
+    .Toastify__toast-container{
+        
+        margin-top: 50px;
+    }
+}
+
+ 

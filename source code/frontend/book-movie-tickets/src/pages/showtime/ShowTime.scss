@@ -1,0 +1,525 @@
+.cinemaroom{
+    margin: 0 50px;
+    .cinemaroom-header{
+        border: 1px solid var(--bs-admin-left);
+        padding: 10px 15px;
+        .cinemaroom-location{
+            margin-bottom: 15px;
+
+            span{
+                font-size: 1.8rem;
+            }
+
+            select{
+                margin-left: 15px;
+                height: 34px;
+                border: navajowhite;
+                outline: none;
+                border-radius: 10px;
+                width: 160px;
+            }
+        }
+
+        .cinemaroom-types{
+            display: flex;
+            align-items: center;
+            position: relative;
+            .cinemaroom-type{
+                text-align: center;
+                margin: 0 10px;
+                cursor: pointer;
+
+                &:hover{
+                    opacity: 0.8;
+                }
+
+                img{
+                    width: 50px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    background-color:  var(--bs-white-color);
+                }
+
+                p{
+                    font-size: 1.3rem;
+                }
+            }
+
+            .cinemaroom-header-add{
+                position: absolute;
+                right: 56px;
+                top: 12px;
+                margin-left: 10px;
+                button{
+                    width: 130px;
+                    border: none;
+                    outline: none;
+                    height: 34px;
+                    border-radius: 10px;
+                    background-color: var(--bs-blue-color);
+                    color: var(--bs-white-color);
+                    cursor: pointer;
+    
+                    &:hover{
+                        opacity: 0.6;
+                    }
+
+                    svg{
+                        font-size: 2rem;
+                        margin: 0 4px -5px -6px;
+                    }
+                }
+            }
+        }
+    }
+
+    .cinemaroom-content{
+        display: flex;
+        border: 1px solid var(--bs-admin-left);
+        // padding: 10px 15px;
+    }
+
+    .cinemaroom-content-left{
+        flex: 1;
+        border-right: 1px solid var(--bs-admin-left);
+        .cinemaroom-left-header {
+            display: flex;
+            align-items: center;
+            margin: 8px 10px;
+            justify-content: space-between;
+
+            .cinemaroom-left-search{
+                position: relative;
+                input{
+                    padding: 4px 10px;
+                    font-size: 1.4rem;
+                    height: 34px;
+                    border-radius: 10px;
+                    border: 1px solid #ccc;
+                    outline: none;
+                    font-weight: 300;
+                }
+                svg{
+                    position: absolute;
+                    top: 50%;
+                    right: 4px;
+                    transform: translateY(-50%);
+                    font-size: 2rem;
+                    color: #837e7e;
+                }
+            }
+
+            .cinemaroom-left-add{
+                button{
+                    width: 120px;
+                    border: none;
+                    outline: none;
+                    height: 34px;
+                    border-radius: 10px;
+                    background-color: var(--bs-blue-color);
+                    color: var(--bs-white-color);
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover{
+                        opacity: 0.6;
+                    }
+
+                    svg{
+                        font-size: 2rem;
+                        margin: 0 4px 2px -6px;
+                    }
+                }
+            }
+        }
+
+        .cinemaroom-left-infos{
+            overflow-y: auto;
+            height: 425px;
+
+            .cinemaroom-left-info{
+                padding: 12px 0;
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                display: flex;
+                align-items: center;
+
+                &.active{
+                    background-color: rgba(255,255,255,0.5);
+                }
+
+                &:hover{
+                    background-color: rgba(255,255,255,0.5);
+                }
+                img{
+                    width: 40px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    margin: 0 10px;
+                }
+                p{
+                    font-size: 1.6rem;
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+
+    .showTime-right{
+        flex: 2;
+
+        .showTime-calendar{
+            display: flex;
+            align-items: center;
+            margin-top: 4px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding-bottom: 10px;
+            .showTime-border{
+                text-align: center;
+                width: 70px;
+                height: 60px;
+                border: 1px solid #d82d8b ;
+                background-color: var(--bs-white-color);
+                margin: 0 5px;
+                cursor: pointer;
+                border-radius: 5px;
+
+                &.active{
+                    border: 1px solid blue ;
+
+                    h1{
+                        background-color: blue ;
+                        color: var(--bs-white-color);
+                        font-weight: 800;
+                        padding-bottom: 5px;
+                    }
+                }
+                h1{
+                    background-color: #d82d8b ;
+                    color: var(--bs-white-color);
+                    font-weight: 800;
+                    padding-bottom: 5px;
+                }
+                h3{
+                    color: var(--bs-black-color);
+                    font-weight: 600;
+                    margin-top: 4px;
+                }
+            }
+
+            .showTime-save{
+               margin-left: 15px;
+
+                button{
+                    border: none;
+                    outline: none;
+                    width: 110px;
+                    height: 40px;
+                    border-radius: 10px;
+                    background-color: var(--bs-blue-color);
+                    color: var(--bs-white-color);
+                    cursor: pointer;
+                    font-size: 1.4rem;
+
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+
+        .showTime-movies-container{
+            overflow-y: auto;
+            height: 399px;
+            margin-top: 2px;
+            
+            .showTime-movies{
+                display: flex;
+                align-items: center;
+                margin-top: 25px;
+                margin-left: 5px;
+                margin-right: 5px;
+                border: 1px solid #ccc;
+                padding: 8px 10px;
+                
+                .showTime-movies-search{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    position: relative;
+    
+                    input{
+                        height: 34px;
+                        width: 270px;
+                        font-size: 1.4rem;
+                        border: none;
+                        outline: none;
+                        padding: 2px 10px;
+                        border-radius: 10px;
+                    }
+
+                    // kết quả tìm kiếm
+                    .movie-result {
+                        position: absolute;
+                        top: 70px;
+                        width: 100%;
+                        border-radius: 10px;
+                        background-color: #999696;
+                        color: var(--bs-white-color);
+                        .movie-result-list{
+                            display: flex;
+                            align-items: center;
+                            margin: 10px 4px;
+                            cursor: pointer;
+
+                            &:hover{
+                                background-color: rgba(255, 255, 255, 0.5)
+                            }
+                            img{
+                                width: 50px;
+                                height: auto;
+                            }
+                            .movie-result-info{
+                                margin-left: 8px;
+                                h2{
+                                }
+                                h3{
+                                    font-size: 1.4rem;
+                                    color: #333;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                .showTime-movies-content{
+                    margin-left: 30px;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    width: 100%;
+                    &.showTIme-movie-item{
+                        margin-left: 0;
+                    }
+                    .showTime-movies-info-mainSlide{
+                        img{
+                            width: 100px;
+                            height: auto;
+                            object-fit: cover;
+                        }
+                    }
+    
+                    .showTime-movies-info{
+                        margin-left: 10px;
+    
+                        h2{
+                            margin: 8px 0;
+                            word-wrap: break-word;
+                        }
+                    }
+
+                    .showTime-movies-delete{
+                        svg{
+                            font-size: 3rem;
+                            cursor: pointer;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+
+                            &:hover{
+                                opacity: 0.6;
+                            }
+                            // color: var(--bs-white-color);
+                        }
+                    }
+                }
+            }
+
+            .cinemaroom-right-table{
+                table{
+                    width: 100%;   
+                    .table-scroll-thead{
+                        thead{
+                            font-size: 1.8rem;
+                            background-color: var(--bs-admin-left);
+                            color: var(--bs-white-color);
+                            height: 50px;
+                            tr{
+                                th{
+                                    border: 1px solid var(--bs-black-color);
+                                    border-collapse: collapse;
+                                    max-width: 300px;
+                                }
+    
+                                th:nth-child(1){
+                                    width: 90px;
+                                }
+                                th:nth-child(2){
+                                    width: 305px;
+                                }
+                                th:nth-child(3){
+                                    width: 300px;
+                                }
+                                th:nth-child(4){
+                                    width: 100px;
+                                }
+                            }
+                        }
+    
+                    }    
+                    
+                    .table-scroll-tbody{
+                        // height: 295px;
+                        tbody{
+                            overflow-y: auto;
+                            display: block;
+                            height: 100%;
+                            font-size: 1.6rem;
+                            background-color: var(--bs-table-tbody);
+                            tr{
+                                max-width: 300px;
+                                height: 40px;
+                                th{
+                                    border: 1px solid var(--bs-black-color);
+                                    border-collapse: collapse;
+                                    width: 90px;
+                                }
+                                td{
+            
+                                    &.cinemaName-location{
+                                        width: 70%;
+                                        max-width: 70%;
+                                    }
+                                    padding: 0 10px;
+                                    border: 1px solid var(--bs-black-color);
+                                    border-collapse: collapse;
+                                    svg{
+                                        font-size: 2.4rem;
+                                        cursor: pointer;
+                                        color: green;
+            
+                                        &:hover{
+                                            color: var(--bs-admin-left);
+                                        }
+                                    }
+                                    svg:nth-child(2){
+                                        margin-left: 10px;
+                                        color: var(--bs-red-color);
+            
+                                        &:hover{
+                                            opacity: 0.8;
+                                            color: var(--bs-admin-left);
+                                        }
+                                    }
+                                  
+            
+                                    span{
+                                        .userinfo-table-img{
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;
+                                            margin-right: 4px;
+                                            object-fit: cover;
+                                        }
+                                    }
+        
+                                    button{
+                                        border: 1px solid var(--bs-blue-color);
+                                        color: var(--bs-blue-color);
+                                        font-size: 1.2rem;
+                                        padding: 2px 4px;
+                                        margin: 0 4px;
+                                        outline: none;
+                                        border-radius: 10px;
+                                        height: 26px;
+                                        cursor: pointer;
+                                        // width: 100%;
+        
+                                        &:hover {
+                                            opacity: 0.8;
+                                        }
+                                    }
+                                    
+                                }
+    
+                                td:nth-child(2){
+                                    width: 299px;
+                                }
+                                td:nth-child(3){
+                                    width: 298px;
+                                    word-break: break-all;
+                                    overflow-wrap: break-word;
+                                }
+                                td:nth-child(4){
+                                    width: 95px;
+                                }
+        
+                                td:nth-child(3){
+                                    // text-align: center;                                   
+                                }
+            
+                                td:last-child{
+                                    // text-align: left;
+                                    button{
+                                        // width: 100%;
+                                        background-color: var(--bs-green-color);
+                                        color: var(--bs-white-color);
+                                        border: none;
+                                    }
+                                    
+                                }
+
+                                .table-body-display{
+                                    text-align: left;
+                                }
+
+                                .table-body-add{
+                                    text-align: center;
+                                }
+
+                            }
+                        
+                        }
+    
+                    }
+                }
+            }
+        }
+    }
+
+    // form nhập tiền vé
+    .showtime-dialog-ticket{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.4);
+        .showtime-ticket-info{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: aqua;
+            width: 27%;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            label{
+                font-size: 1.8rem;
+                margin: 20px 0 0 20px;
+            }
+            input{
+                width: 60%;
+                margin-left: 20px;
+                height: 30px;
+                margin-top: 10px;
+                outline: none;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}

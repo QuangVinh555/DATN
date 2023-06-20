@@ -1,0 +1,24 @@
+.default{
+    .default-header{
+        border-bottom: 1px solid #ccc;
+        height: 64px;
+        box-shadow: 0px 0 4px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        background-color: hsla(0,0%,100%,.95)
+    }
+    .default-container{
+        
+
+        .default-footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+    }
+}

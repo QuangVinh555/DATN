@@ -1,0 +1,186 @@
+.home{
+    margin-top: 70px;
+
+    .buyticket-movie{
+        position: relative;
+        .buyticket-movie-2{
+             background-image: url(https://static.mservice.io/img/momo-upload-api-210701105436-637607336767432408.jpg);
+             background-size: contain;
+             padding: 20px 0;
+             .buyticket-movie-title{
+                 h1{
+                     text-align: center;
+                     font-size: 3.5rem;
+                     color: var(--bs-white-color);
+                 }
+             }
+             .buyticket-movie-lists{
+                 margin-top: 20px;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 position: relative;
+                 overflow-x: hidden;
+                 transition: transform 0.3s ease;
+                 transform: translateX(0);
+ 
+                 .buyticket-movie-item{
+                     max-width: 250px;
+                     max-height: 510px;
+                     margin: 0 10px;
+                     border-radius: 10px;
+                     cursor: pointer;                
+                     flex: 0 0 auto;
+                     transition: transform 0.3s ease;
+                     // transform: translateX(0);
+ 
+                     &.active{
+                         transform: translateX(-100%);
+                     }
+                     
+                     .buyticket-movie-img{
+                         position: relative;
+                         overflow: hidden; /* Ẩn phần dư của hình ảnh khi nó phóng to */
+                         border-radius: 10px;
+                         &:hover img{
+                             transform: scale(1.2);
+                         }
+                         img{
+                             transition: transform linear 0.3s; /* Thêm hiệu ứng chuyển đổi 0.3 giây */
+                             border-radius: 10px;
+                             width: 250px;
+                             object-fit: cover;
+                             overflow: hidden; /* Ẩn phần dư của hình ảnh khi nó phóng to */
+                             min-height: 400px;
+                         }
+                         p{
+                             position: absolute;
+                             bottom: 0;
+                             background-color: var(--bs-red-color);
+                             width: 100%;
+                             /* height: 19px; */
+                             padding: 5px 0;
+                             color: white;
+                             text-align: center;
+                             border-bottom-right-radius: 10px;
+                             border-bottom-left-radius: 10px;
+                             font-size: 1.6rem;
+ 
+                             &:hover{
+                                 opacity: 0.9;
+                             }
+                         }
+                     }
+                     .buyticket-movie-name{
+                         color: var(--bs-white-color);
+                         padding-bottom: 30px;
+                         margin: 2px 6px;
+                         h2{
+                             text-align: left;
+                             font-size: 1.8rem;
+                             word-wrap: break-word;
+                             overflow: hidden;
+                             white-space: nowrap;
+                             text-overflow: ellipsis;
+                         }
+                         h3{
+                             max-width: 90%;
+                             font-size: 1.5rem;
+                             font-weight: 400;
+                             overflow: hidden;
+                             white-space: nowrap;
+                             text-overflow: ellipsis;
+                         }
+                         
+                         .buyticket-movie-star{
+                             svg{
+                                 font-size: 2rem;
+                                 color: aqua;
+                             }
+                             font-size: 1.6rem;
+                             display: flex;
+                             align-items: center;
+                         }
+                     }
+                 }
+                 .buyticket-movie-left{
+                     font-size: 5rem;
+                     background-color: wheat;
+                     border-radius: 50%;
+                     position: absolute;
+                     left: 210px;
+                     top: 167px;
+                     cursor: pointer;
+                     z-index: 2;
+ 
+                     &:hover{
+                         opacity: 0.8;
+                     }
+                 }
+                 .buyticket-movie-right{
+                     font-size: 5rem;
+                     background-color: wheat;
+                     border-radius: 50%;
+                     position: absolute;
+                     right: 210px;
+                     top: 167px;
+                     cursor: pointer;
+ 
+                     &:hover{
+                         opacity: 0.8;
+                     }
+                 }
+             }
+        }
+    }
+
+    .home-img{
+        position: relative;
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 600px;
+        }
+        .home-img-info{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            h1{
+                color: var(--bs-white-color);
+                font-size: 4rem;
+                color: #d82d8b;
+            }
+            p{
+                svg{
+                    font-size: 3rem;
+                    margin-right: 10px;
+                    color: #d82d8b;
+
+                }
+                display: flex;
+                align-items: center;
+                color: var(--bs-white-color);
+                font-size: 1.8rem;
+                margin: 8px 0;
+            }
+            button{
+                color: var(--bs-white-color);
+                background-color: #d82d8b;
+                width: 130px;
+                height: 40px;
+                margin-top: 10px;
+                border: none;
+                border-radius: 5px;
+                text-transform: uppercase;
+                font-weight: 700;
+                cursor: pointer;
+                font-size: 1.6rem;
+
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
