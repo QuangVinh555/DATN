@@ -6,6 +6,9 @@ from surprise import Dataset
 from surprise import Reader
 from surprise import KNNBasic
 from sqlalchemy.engine import URL
+import numpy as np
+from sklearn.neighbors import NearestNeighbors
+
 
 app = Flask(__name__)
 CORS(app)
@@ -52,38 +55,55 @@ def setup():
 
 setup()
 
+# Hàm tính toán ma trận cosine similarity
+def calculate_cosine_similarity(ratings):
+    num_items = ratings.shape[1]
+    item_correlation = np.corrcoef(ratings, rowvar=False)
+    return item_correlation
+
+# Hàm tính toán ma trận rating dự đoán
+def item_collaborative_filtering(ratings, item_correlation, k=5):
+    num_users = ratings.shape[0]
+    num_items = ratings.shape[1]
+    predicted_ratings = np.zeros((num_users, num_items))
+
+    # Tìm k hàng xóm gần nhất cho mỗi sản phẩm
+    nbrs = NearestNeighbors(n_neighbors=k, metric='cosine').fit(item_correlation)
+    
+    for user in range(num_users):
+        for item in range(num_items):
+            if ratings[user, item] == 0:
+                # Tìm k hàng xóm gần nhất của sản phẩm hiện tại
+                indices = nbrs.kneighbors([item_correlation[item]], return_distance=False)[0]
+                similarity_scores = item_correlation[item, indices].flatten()
+                rated_items = ratings[user, indices].flatten()
+                prediction = np.dot(similarity_scores, rated_items) / np.sum(np.abs(similarity_scores))
+                predicted_ratings[user, item] = prediction
+
+    return predicted_ratings
+
+
+# API endpoint để lấy ma trận cosine similarity và ma trận rating dự đoán
+@app.route('/api/ratings', methods=['POST'])
+
 # API endpoint để gợi ý bộ phim cho người dùng
 @app.route('/recommendations', methods=['POST'])
-def get_recommendations():
-    user_id = request.json['user_id']
-    n_recommendations = request.json['n_recommendations']
-    # Thiết lập kết nối SQL
+def get_predicted_ratings():
+       # Thiết lập kết nối SQL
     connection = get_sql_connection()
+    # Nhận ma trận ratings từ yêu cầu POST
+    ratings = np.array(request.json['ratings'])
 
-    # Truy vấn dữ liệu từ SQL và lưu vào DataFrame
-    query = "SELECT user_id, movie_id, count_stars FROM Comments"
-    df = pd.read_sql_query(query, connection)
+    # Tính toán ma trận cosine similarity
+    item_correlation = calculate_cosine_similarity(ratings)
 
-    # Gợi ý bộ phim cho người dùng
-    user_movies = df[df['user_id'] == user_id]['movie_id']
-    unseen_movies = df[~df['movie_id'].isin(user_movies)]['movie_id']
-    predictions = [item_item_model.predict(user_id, movie_id) for movie_id in unseen_movies]
-    top_predictions = sorted(predictions, key=lambda x: x.est, reverse=True)[:n_recommendations]
-    recommended_movie_ids = [prediction.iid for prediction in top_predictions]
-
-    # Truy vấn dữ liệu từ SQL để lấy thông tin về các bộ phim được gợi ý
-    recommended_movies_query = f"SELECT Movie.id, Movie.name, Movie.description, Movie.content, Movie.stamp, Movie.nation, Movie.premiere_year, Movie.movie_duration, Movie.premiere_date, Movie.author, Movie.link_trailer ,Movie.category, Movie.total_percent, Banner.main_slide, Banner.container_slide FROM Movie  INNER JOIN Banner ON Banner.movie_id = Movie.id WHERE Movie.id IN {tuple(recommended_movie_ids)}"
-    # recommended_movies_query = f"SELECT id, name FROM movie WHERE id IN ({', '.join(str(i) for i in recommended_movie_ids)})"
-
-    recommended_movies = pd.read_sql_query(recommended_movies_query, connection)
-
-    # Trả về kết quả dưới dạng JSON
-    result = {'recommendations': recommended_movies.to_dict(orient='records')}
+    # Áp dụng thuật toán Item Collaborative Filtering với nearest neighbors là k=5
+    predicted_ratings = item_collaborative_filtering(ratings, item_correlation, k=5)
 
     # Đóng kết nối SQL
     connection.close()
-
-    return jsonify(result)
+    # Trả về ma trận cosine similarity và ma trận rating dự đoán dưới dạng JSON
+    return jsonify({'item_correlation': item_correlation.tolist(), 'predicted_ratings': predicted_ratings.tolist()})
 
 if __name__ == '__main__':
     app.run()
